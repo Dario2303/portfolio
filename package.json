@@ -1,15 +1,23 @@
 {
   "name": "portafolio",
-  "type": "module",
-  "version": "0.0.1",
+  "version": "1.0.0",
+  "description": "portfolio de dario",
+  "main": "index.js",
   "scripts": {
-    "dev": "astro dev",
-    "start": "astro dev",
-    "build": "astro build",
-    "preview": "astro preview",
-    "astro": "astro"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "dependencies": {
-    "astro": "^2.8.0"
-  }
+  "author": "Dario Rodriguez",
+  "license": "ISC",
+  "devDependencies": {
+    "autoprefixer": "^10.4.14",
+    "gulp": "^4.0.2",
+    "gulp-postcss": "^9.0.1",
+    "gulp-sass": "^5.1.0",
+    "postcss": "^8.4.25",
+    "sass": "^1.63.6"
+  },
+  "browserslist": [
+    "last 1 version",
+    "> 1%"
+  ]
 }
