@@ -1,0 +1,87 @@
+@use 'variables' as v;
+@use 'mixins' as m;
+
+html {
+    font-size: 62.5%;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+p {
+    font-family: v.$primary_font;
+    @include m.tablet {
+        font-size: 1.5rem;
+    }
+}
+
+*,*::before, *::after {
+    box-sizing: inherit;
+}
+
+body {
+    font-family: v.$secondary_font;
+    font-size: 1.6rem;
+    background-color: v.$background;
+}
+
+p, li {
+    color: v.$text_color;
+}
+
+h1, h2, h3, h4 {
+    color: v.$white;
+    margin: 0;  
+}
+
+li {
+    list-style: none;
+}
+
+ul {
+    padding: inherit;
+}
+
+.container {
+    width: 95%;
+    max-width: 120rem;
+    margin: 0 auto;
+}
+
+a {
+    text-decoration: none;
+    cursor: pointer;
+    color: v.$white;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+.titles {
+    margin: 2rem 0;
+    text-align: center;
+    font-size: x-large;
+    color: v.$title;
+    display: inline-block;
+
+    @include m.phone {
+        font-size: xx-large;
+    }
+
+    &::after {
+        @include m.linebar;
+    }
+}
+
+.margin_top {
+    margin-top: 3rem;
+
+    @include m.phone {
+        margin-top: 6rem;
+    }
+
+    @include m.desktop {
+        margin-top: 10rem;
+    }
+}

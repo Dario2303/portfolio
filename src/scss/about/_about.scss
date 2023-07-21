@@ -1,0 +1,53 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.about {
+    display: grid;
+    margin-top: 8rem;
+    gap: 2rem;
+
+    @include m.phone {
+        grid-template-columns: 1fr 1fr;
+    }
+    @include m.tablet {
+        p {
+            font-size: 2.4rem;
+        }
+    }
+}
+
+.about__image {
+    display: none;
+}
+
+@include m.phone {
+    .about__image {
+        display: block;
+        background-image: url(../../../image/Code\ typing-pana.svg);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: contain;
+    }
+}
+
+.align-cv {
+    display: flex;
+    justify-content: center;
+}
+
+.cv {
+    padding: 1.5rem 3rem;
+    background-color: v.$background;
+    filter: brightness(150%);
+    color: v.$secondary_color;
+    transition-property: all;
+    transition-duration: 300ms;
+    transition-timing-function: ease-in-out;
+    font-size: 2rem;
+    border-radius: 2rem;
+
+    &:hover{
+        background-color: v.$title;
+        color: v.$white;
+    }
+}

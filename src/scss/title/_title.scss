@@ -1,0 +1,100 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.title {
+    display: grid;
+    align-items: center;
+    gap: 4rem;
+    grid-template-columns: inherit;
+    margin-top: 4rem;
+    text-align: center;
+   
+    & h2 {
+        color: v.$title;
+    }
+}
+
+@include m.tablet {
+    .title {
+        grid-template-columns: repeat(2, 1fr); 
+        margin-top: 10rem;
+        text-align: start;
+        padding: 0 5%;
+    }
+}
+
+@include m.phone {
+    .title {
+        justify-content: center;
+        
+    }
+}
+
+.photo {
+    grid-row: 1 / 2 ;
+    border-radius: 0;
+    background-image: url(../../../image/myphoto.jpg);
+    background-repeat: no-repeat;
+    background-position: top;
+    background-size: 80%;
+    height: 20rem;
+}
+
+
+@include m.phone {
+    .title__content {
+        & h1 {
+            font-size: 5rem;
+        }
+
+        & h2 {
+            font-size: 3rem;
+        }
+    }
+}
+
+@include m.tablet {
+    .title__content {
+        & h1 {
+            font-size: 10rem;
+        }
+
+        & h2 {
+            font-size: 4rem;
+        }
+    }
+}
+
+
+.title__social {
+    display: none;
+    @include m.tablet {
+            display: flex;
+            gap: 1rem;
+            margin: 1rem 0;
+            @include m.icons;
+        }
+}
+
+@include m.phone {
+    .photo {
+        background-size: cover;
+        overflow: hidden;
+        grid-row: inherit;
+        border-radius: 50%;
+        width: auto;
+        height: 40rem;
+    }    
+}
+
+@include m.phone {
+    .border-gradient {
+        background: linear-gradient(45deg, v.$title, v.$white);
+        padding: 6px;
+        width: 40rem;
+        margin-left: auto;
+        border-radius: 50%;
+    }
+}
+
+

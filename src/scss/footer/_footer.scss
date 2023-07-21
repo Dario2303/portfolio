@@ -1,0 +1,22 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+
+.footer {
+    margin: 5rem 0;
+
+    &__text , p , a{
+        color: v.$primary_color;
+        font-size: 2rem;
+        text-align: center;
+    }
+
+    & a {
+        text-decoration: underline;
+        display: block;
+
+        @include m.phone {
+            display: inline;
+        }
+    }
+}

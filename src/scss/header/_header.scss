@@ -1,0 +1,90 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+
+@include m.tablet {
+
+    .stiky {
+        position: sticky;
+        z-index: 1;
+        top: 0;
+    }
+
+    .blur {
+        backdrop-filter: blur(30px) brightness(0.5);
+        transition-property: backdrop-filter;
+        transition-duration: 100ms;
+        transition-timing-function: ease;
+    }
+}
+
+
+.link {
+    color: v.$primary_color;
+    transition: color 200ms ease-in;
+    
+    &:hover {
+        color: v.$white;
+    }
+}
+
+.nav ul{
+    display: none;
+    gap: 5rem;
+    font-size: 3rem;
+    margin: 0;
+    margin-bottom: 3.4rem;
+
+    @include m.tablet {
+        display: flex;
+    }
+}
+
+.nav__social {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        margin: 1rem 0;
+        @include m.icons;
+
+        & i {
+            font-size: 3rem;
+            color: v.$white;
+
+            @include m.phone {
+                font-size: 4rem;
+            }
+        }
+
+        @include m.tablet {
+        display: none;
+
+    }
+}
+
+
+
+#line-drop {
+    display: none;
+    position: absolute;
+    background-color: v.$title;
+    transition: all 200ms ease-in-out;
+    height: 3px;
+    top: 124px;
+}
+
+@include m.tablet {
+    #line-drop {
+        display: block;
+    }
+}
+
+.header-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    @include m.tablet {
+        align-items: flex-end;
+    }
+}

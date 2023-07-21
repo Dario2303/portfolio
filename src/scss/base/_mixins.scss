@@ -1,0 +1,39 @@
+@use 'variables' as v;
+
+@mixin phone {
+    @media (min-width: v.$phone ) {
+        @content;
+    }
+}
+
+@mixin tablet {
+    @media (min-width: v.$tablet ) {
+        @content;
+    }
+}
+
+@mixin desktop {
+    @media (min-width: v.$desktop ) {
+        @content;
+    }
+}
+
+@mixin linebar {
+    background-image: linear-gradient(to left, v.$primary_color 40%, v.$secondary_color 40%, v.$secondary_color 80%, v.$black 80%, v.$black 100%);
+    content: '';
+    display: block;
+    margin-top: 5px;
+    height: 8px;
+    width: 10rem;
+}
+
+@mixin icons {
+    & i {
+        color: v.$primary_color;
+        font-size: 4rem;
+        &:hover {
+            color: v.$white;
+            transition: color 300ms ease-in-out;
+        }
+    }
+}
